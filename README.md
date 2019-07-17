@@ -1,4 +1,6 @@
-# simple-vue-app
+# Simple Vue App
+
+This projects shows how to create simple web app using vue.
 
 ## Project setup
 ```
