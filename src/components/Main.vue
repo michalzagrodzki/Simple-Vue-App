@@ -1,6 +1,44 @@
 <template>
   <div class="hello">
-    <h1>Main view</h1>
+    <nav>Nav elements</nav>
+    <section>
+      <div>
+        <h1></h1>
+      </div>
+    </section>
+    <section>
+      <div>
+        <div>
+          <div>
+            <p></p>
+            <h2></h2>
+            <h3></h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <div>
+          <h4></h4>
+          <div>
+            <div>
+              <img />
+              <p></p>
+            </div>
+            <div>
+              <img />
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <button></button>
+      </div>
+    </section>
+    <section>
+      <div>
+      </div>
+    </section>
   </div>
 </template>
 
