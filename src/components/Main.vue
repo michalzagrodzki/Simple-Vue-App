@@ -3,18 +3,18 @@
     <nav>Nav elements</nav>
     <section>
       <div class="head-section">
-        <h1>Simple Vue App</h1>
+        <h1>{{ title }}</h1>
       </div>
     </section>
     <section>
       <div class="message-section">
         <div class="subtitle-field">
           <div class="subtitle-header">
-            <h4>VUE APP</h4>
+            <h4>{{ sections.message }}</h4>
           </div>
           <div class="subtitle-body">
-            <h2>This is example app using vue.js</h2>
-            <h3>this app shows capabilities of using vue in simple cases</h3>
+            <h2>{{ message.title }}</h2>
+            <h3>{{ message.subtitle }}</h3>
           </div>
         </div>
       </div>
@@ -23,32 +23,32 @@
       <div class="products-section">
         <div class="product-field">
           <div class="product-header">
-            <h4>Products</h4>
+            <h4>{{ sections.products }}</h4>
           </div>
           <div class="product-row">
-            <div class="product-item">
-              <img />
-              <p></p>
+            <div v-for="product in products" class="product-item">
+              <img src="product.image" />
+              <p>{{ product.name }}</p>
             </div>
           </div>
         </div>
       </div>
       <div class="products-footer">
-        <button class="product-button">MORE PRODUCTS</button>
+        <button class="product-button">{{ productAction.button }}</button>
       </div>
     </section>
     <section>
       <div class="contact-section">
         <div class="contact-header">
-          <h4>Contact</h4>
+          <h4>{{ sections.contact }}</h4>
         </div>
-        <h2>Take a contact with us</h2>
-        <h3>We are working with different people on different projects</h3>
+        <h2>{{ contact.title }}</h2>
+        <h3>{{ contact.subtitle }}</h3>
         <form>
           <input type="text" placeholder="your name">
           <input type="text" placeholder="your email">
           <input type="text" placeholder="your message">
-          <button class="submit-button">SEND MESSAGE</button>
+          <button class="submit-button">{{ contact.button }}</button>
         </form>
       </div>
     </section>
@@ -65,8 +65,36 @@ export default {
   name: 'Main',
   data () {
     return {
-      title: '',
-      subtitle: ''
+      title: 'Simple Vue App',
+      message: {
+        title: 'This is example app using vue.js',
+        subtitle: 'this app shows capabilities of using vue in simple cases'
+      },
+      products: [
+        {
+          id: 1,
+          name: 'Paper',
+          image: ''
+        },
+        {
+          id: 2,
+          name: 'Program',
+          image: ''
+        }
+      ],
+      productAction: {
+        button: 'MORE PRODUCTS'
+      },
+      contact: {
+        title: 'Take a contact with us',
+        subtitle: 'We are working with different people on different projects',
+        button: 'SEND MESSAGE'
+      },
+      sections: {
+        message: 'VUE APP',
+        products: 'Products',
+        contact: 'Contact'
+      }
     }
   }
 }
