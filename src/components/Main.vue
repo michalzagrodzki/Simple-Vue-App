@@ -9,7 +9,7 @@
     <section>
       <div class="message-section">
         <div class="subtitle-field">
-          <p>vue app</p>
+          <h4>vue app</h4>
           <h2>This is example app using vue.js</h2>
           <h3>this app shows capabilities of using vue in simple cases</h3>
         </div>
@@ -32,19 +32,19 @@
         </div>
       </div>
       <div class="products-footer">
-        <button>More products</button>
+        <button class="action-button">MORE PRODUCTS</button>
       </div>
     </section>
     <section>
       <div class="contact-section">
-        <p>Contact</p>
+        <h4>Contact</h4>
         <h2>Take a contact with us</h2>
-        <h4>We are working with different people on different projects</h4>
+        <h3>We are working with different people on different projects</h3>
         <form>
           <input type="text" placeholder="your name">
           <input type="text" placeholder="your email">
           <input type="text" placeholder="your message">
-          <button>Send message</button>
+          <button class="action-button">SEND MESSAGE</button>
         </form>
       </div>
     </section>
@@ -91,6 +91,14 @@ $font-basic-colors: (
   "dark": #0e0f10
   );
 
+$font-primary: (
+  "Muli", sans-serif
+);
+
+$font-secondary: (
+  "Literata", serif
+);
+
 .head-section {
   display: flex;
   background-color: map-get($main-colors, "primary");
@@ -101,7 +109,7 @@ $font-basic-colors: (
   h1 {
     color: map-get($font-basic-colors, "light");
     font-size: 16px;
-
+    font-family: $font-primary;
   }
 }
 
@@ -117,6 +125,19 @@ $font-basic-colors: (
   background-color: map-get($main-colors, "secondary");
   margin-top: -120px;
   padding: 50px;
+  color: map-get($font-basic-colors, "light");
+
+  h4 {
+    font-family: $font-primary;
+  }
+
+  h2 {
+    font-family: $font-primary;
+  }
+
+  h3 {
+    font-family: $font-secondary;
+  }
 }
 
 .products-section {
@@ -134,6 +155,12 @@ $font-basic-colors: (
   width: 30vw;
   margin-top: 50px;
   margin-bottom: -20px;
+  color: map-get($font-basic-colors, "light");
+  justify-content: center;
+
+  h4 {
+    font-family: $font-primary;
+  }
 }
 
 .products-footer {
@@ -144,26 +171,41 @@ $font-basic-colors: (
   justify-content: center;
 }
 
+.action-button {
+  font-family: $font-primary;
+  border: none;
+  color: map-get($font-basic-colors, "light");
+  background-color: map-get($main-colors, "secondary");
+  padding: 15px;
+}
+
 .contact-section {
   display: flex;
   background-color: lighten(map-get($main-colors, "primary"), 5%);
   align-items: center;
   flex-direction: column;
-  p {
+  h4 {
+    font-family: $font-primary;
     color: map-get($font-basic-colors, "light");
     font-size: 16px;
   }
   h2 {
+    font-family: $font-primary;
     color: map-get($font-basic-colors, "light");
     font-size: 16px;
   }
-  h4 {
-    color: map-get($font-basic-colors, "light");
+  h3 {
+    font-family: $font-secondary;
+    color: map-get($font-basic-colors, "grey");
     font-size: 16px;
   }
   form {
     display: flex;
     flex-direction: column;
+    input {
+      font-family: $font-secondary;
+      color: map-get($font-basic-colors, "dark");
+    }
   }
 }
 
@@ -174,7 +216,8 @@ $font-basic-colors: (
   align-items: center;
 
   p {
-    color: map-get($font-basic-colors, "light");
+    font-family: $font-primary;
+    color: map-get($font-basic-colors, "grey");
     font-size: 16px;
   }
 }
