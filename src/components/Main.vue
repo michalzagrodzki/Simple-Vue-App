@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="products-footer">
-        <button class="product-button">{{ productAction.button }}</button>
+        <button v-on:click="linkToPortfolio()" class="product-button">{{ productAction.button }}</button>
       </div>
     </section>
     <section>
@@ -120,6 +120,11 @@ export default {
         products: 'Products',
         contact: 'Contact'
       }
+    }
+  },
+  methods: {
+    linkToPortfolio: function () {
+      this.$router.push({ name: 'portfolio' });
     }
   }
 }
