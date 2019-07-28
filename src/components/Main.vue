@@ -80,6 +80,31 @@ export default {
           id: 2,
           name: 'Program',
           image: ''
+        },
+        {
+          id: 3,
+          name: 'Program',
+          image: ''
+        },
+        {
+          id: 4,
+          name: 'Program',
+          image: ''
+        },
+        {
+          id: 5,
+          name: 'Program',
+          image: ''
+        },
+        {
+          id: 6,
+          name: 'Program',
+          image: ''
+        },
+        {
+          id: 7,
+          name: 'Program',
+          image: ''
         }
       ],
       productAction: {
