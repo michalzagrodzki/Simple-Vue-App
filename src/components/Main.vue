@@ -25,12 +25,12 @@
           <div class="product-header">
             <h4>{{ sections.products }}</h4>
           </div>
-          <div class="product-row">
-            <div v-for="product in products" class="product-item">
-              <img src="product.image" />
-              <p>{{ product.name }}</p>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="products-row">
+        <div v-for="product in products" class="product-item">
+          <img src="product.image" />
+          <p>{{ product.name }}</p>
         </div>
       </div>
       <div class="products-footer">
@@ -297,18 +297,22 @@ $border-radius: (
   @include header;
 }
 
-.product-row {
+.products-row {
   display: flex;
   flex-direction: row;
-  position: absolute;
-  margin-top: 95px;
+  overflow-x: auto;
+  margin-top: -185px;
+  height: 60vh;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .product-item {
   @include product-shadow;
   background-color: map-get($basic-colors, "light");
   display: flex;
-  width: 340px;
+  min-width: 340px;
   height: 460px;
   margin: 0 20px 0 20px;
 }
@@ -319,6 +323,7 @@ $border-radius: (
   height: 55vh;
   align-items: flex-end;
   justify-content: center;
+  margin-top: -40vh;
 }
 
 .product-button {
