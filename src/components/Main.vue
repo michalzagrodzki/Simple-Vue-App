@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div>
     <nav>Nav elements</nav>
     <section>
       <div class="head-section">
