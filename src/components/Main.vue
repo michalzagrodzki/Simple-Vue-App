@@ -257,12 +257,12 @@ $border-radius: (
   display: flex;
   flex-direction: column;
   background-color: map-get($main-colors, "secondary");
-  height: 100%;
+  height: 62vh;
   width: 30vw;
   margin-top: 50px;
   margin-bottom: -35vh;
   color: map-get($font-basic-colors, "light");
-  justify-content: center;
+  justify-content: flex-start;
   padding: 0 40px 40px 40px;
   @include field-shadow;
   border-radius: $border-radius;
@@ -275,6 +275,8 @@ $border-radius: (
 .product-row {
   display: flex;
   flex-direction: row;
+  position: absolute;
+  margin-top: 95px;
 }
 
 .product-item {
@@ -283,6 +285,7 @@ $border-radius: (
   display: flex;
   width: 340px;
   height: 460px;
+  margin: 0 20px 0 20px;
 }
 
 .products-footer {
