@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="products-row">
-        <div v-for="product in products" class="product-item">
+        <div v-for="product in products" v-bind:key="product.id" class="product-item">
           <img src="product.image" />
           <p>{{ product.name }}</p>
         </div>
@@ -124,7 +124,7 @@ export default {
   },
   methods: {
     linkToPortfolio: function () {
-      this.$router.push({ name: 'portfolio' });
+      this.$router.push({ name: 'portfolio' })
     }
   }
 }
