@@ -1,10 +1,10 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import Main from '@/components/Main.vue'
 
-const wrapper = shallowMount(Main)
-
+const wrapper = mount(Main)
+wrapper.setData({title: String})
 describe('Main', () => {
-  it('renders a div', () => { 
-  	expect(wrapper.contains('div')).toBe(true)
+  it('should contain title', () => { 
+  	expect(wrapper.vm.title).toBe(String)
   })
 })
