@@ -9,7 +9,7 @@
     </section>
     <section>
       <div class="portfolio-grid-section">
-        <div class="porftoflio-grid-header"></div>
+        <div class="portfolio-grid-header"></div>
         <div v-for="product in products" v-bind:key="product.id" class="portfolio-product-item">
           <img src="product.image" />
           <p>{{ product.name }}</p>
@@ -104,6 +104,21 @@ export default {
     width: 100%;
     text-align: center;
     letter-spacing: 1px;
+  }
+}
+
+.portfolio-grid-header {
+
+}
+
+.portfolio-product-item {
+
+  img {
+
+  }
+  
+  p{
+
   }
 }
 </style>
