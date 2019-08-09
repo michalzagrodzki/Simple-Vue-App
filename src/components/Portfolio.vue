@@ -3,7 +3,8 @@
     <nav>Nav elements</nav>
     <section>
       <div class="portfolio-head-section">
-        <h1>{{ header.title }}</h1>
+        <h1>{{ title }}</h1>
+        <h2>{{ subtitle }}</h2>
       </div>
     </section>
     <section>
@@ -18,10 +19,8 @@ export default {
   name: 'Portfolio',
   data () {
     return {
-      header: {
-        title: 'Products Portfolio',
-        caption: 'Complete list of my products'
-      },
+      title: 'Products Portfolio',
+      subtitle: 'Complete list of my products',
       products: [
         {
           id: 1,
@@ -73,20 +72,33 @@ export default {
 .portfolio-head-section {
   display: flex;
   background-color: map-get($main-colors, "primary");
-  height: 80vh;
+  height: 50vh;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   h1 {
     color: map-get($font-basic-colors, "light");
-    font-size: 90px;
-    font-weight: 900;
+    font-size: 65px;
+    font-weight: 700;
     line-height: .95;
     font-family: $font-primary;
     text-transform: capitalize;
-    width: 30%;
+    width: 100%;
     text-align: center;
-    letter-spacing: -4px;
+    letter-spacing: -3px;
+  }
+
+  h2 {
+    color: map-get($font-basic-colors, "light");
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.3;
+    font-family: $font-primary;
+    text-transform: capitalize;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
   }
 }
 </style>
