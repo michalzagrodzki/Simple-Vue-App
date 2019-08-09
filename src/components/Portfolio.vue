@@ -9,6 +9,11 @@
     </section>
     <section>
       <div class="portfolio-grid-section">
+        <div class="porftoflio-grid-header"></div>
+        <div v-for="product in products" v-bind:key="product.id" class="portfolio-product-item">
+          <img src="product.image" />
+          <p>{{ product.name }}</p>
+        </div>
       </div>
     </section>
   </div>
