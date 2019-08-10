@@ -74,6 +74,12 @@ export default {
 @import '../assets/SCSS/fonts.scss';
 @import '../assets/SCSS/variables.scss';
 
+// shared values
+  $side-padding-grid-products-section: 100px;
+  $top-padding-grid-products-section: 50px;
+  $margin-product-item: 18px;
+  
+
 .portfolio-head-section {
   display: flex;
   background-color: map-get($main-colors, "primary");
@@ -107,18 +113,42 @@ export default {
   }
 }
 
+.portfolio-grid-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: $top-padding-grid-products-section;
+  padding-left: $side-padding-grid-products-section;
+  padding-right: $side-padding-grid-products-section;
+  background-color: map-get($basic-colors, "light");
+
+
+}
+
 .portfolio-grid-header {
 
 }
 
 .portfolio-product-item {
+  margin-left: $margin-product-item;
+  margin-right: $margin-product-item;
 
   img {
-
+    width: 350px;
+    height: 230px;
   }
-  
-  p{
 
+  p{
+    color: map-get($font-basic-colors, "dark");
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.3;
+    font-family: $font-primary;
+    text-transform: capitalize;
+    margin: 0;
+    padding-top: 18px;
+    padding-bottom: 36px;
   }
 }
 </style>
