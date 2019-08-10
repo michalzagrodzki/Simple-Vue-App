@@ -10,7 +10,7 @@
     <section>
       <div class="portfolio-grid-section">
         <div class="portfolio-grid-header"></div>
-        <div v-for="product in products" v-bind:key="product.id" class="portfolio-product-item">
+        <div v-for="product in products" v-bind:key="product.id" v-on:click="linkToProduct()" class="portfolio-product-item">
           <img src="product.image" />
           <p>{{ product.name }}</p>
         </div>
@@ -63,6 +63,11 @@ export default {
           image: ''
         }
       ]
+    }
+  },
+  methods: {
+    linkToProduct: function (id) {
+      this.$router.push({ name: 'item' })
     }
   }
 }
