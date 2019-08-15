@@ -1,12 +1,32 @@
 <template>
-  <div class="hello">
-    <h1>Item view</h1>
+  <div>
+    <nav>Nav elements</nav>
+    <section>
+      <div class="item-head-section">
+        <h1>{{ title }}</h1>
+      </div>
+    </section>
   </div>
+
 </template>
 
 <script>
 export default {
-  name: 'Item'
+  name: 'Item',
+  props: [ 'id' ],
+  data () {
+    return {
+      title: '',
+      description: '',
+      images: [],
+      details: {
+        client: '',
+        services: '',
+        year: '',
+        link: ''
+      }
+    }
+  }
 }
 </script>
 
