@@ -23,7 +23,8 @@ export default new Router({
     {
       path: '/item/:id',
       name: 'item',
-      component: Item
+      component: Item,
+      props: true
     },
     {
       path: '/contact',
