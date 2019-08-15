@@ -27,3 +27,14 @@
 @mixin product-shadow {
   box-shadow: 0 30px 60px -30px rgba(0,0,0,.45);
 }
+
+@mixin text-link-animation {
+  transition: {
+    duration: 0.3s;
+  }
+
+  &:hover {
+    color: map-get($main-colors, "secondary");
+    cursor: pointer;
+  }
+}
