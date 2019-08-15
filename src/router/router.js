@@ -21,7 +21,7 @@ export default new Router({
       component: Portfolio
     },
     {
-      path: '/item',
+      path: '/item/:id',
       name: 'item',
       component: Item
     },
