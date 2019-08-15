@@ -144,7 +144,7 @@ export default {
     height: 230px;
   }
 
-  p{
+  p {
     color: map-get($font-basic-colors, "dark");
     font-size: 15px;
     font-weight: 400;
