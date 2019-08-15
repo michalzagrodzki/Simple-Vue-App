@@ -149,6 +149,7 @@ export default {
   }
 
   p {
+    @include text-link-animation;
     color: map-get($font-basic-colors, "dark");
     font-size: 15px;
     font-weight: 400;
@@ -158,14 +159,6 @@ export default {
     margin: 0;
     padding-top: 18px;
     padding-bottom: 36px;
-    transition: {
-      duration: 0.3s;
-    }
-
-    &:hover {
-      color: map-get($main-colors, "secondary");
-      cursor: pointer;
-    }
   }
 }
 </style>
