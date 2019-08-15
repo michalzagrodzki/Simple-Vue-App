@@ -83,7 +83,6 @@ export default {
   $side-padding-grid-products-section: 100px;
   $top-padding-grid-products-section: 50px;
   $margin-product-item: 18px;
-  
 
 .portfolio-head-section {
   display: flex;
