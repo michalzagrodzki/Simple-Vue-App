@@ -95,10 +95,12 @@ export default {
 
   h1 {
     color: map-get($font-basic-colors, "light");
-    font-size: 65px;
-    font-weight: 700;
+    font: {
+      size: 65px;
+      weight: 700;
+      family: $font-primary;
+    }
     line-height: .95;
-    font-family: $font-primary;
     text-transform: capitalize;
     width: 100%;
     text-align: center;
@@ -107,8 +109,11 @@ export default {
 
   h2 {
     color: map-get($font-basic-colors, "light");
-    font-size: 30px;
-    font-weight: 700;
+    font: {
+      size: 30px;
+      weight: 700;
+      family: $font-primary;
+    }
     line-height: 1.3;
     font-family: $font-primary;
     text-transform: capitalize;
@@ -127,8 +132,6 @@ export default {
   padding-left: $side-padding-grid-products-section;
   padding-right: $side-padding-grid-products-section;
   background-color: map-get($basic-colors, "light");
-
-
 }
 
 .portfolio-grid-header {
@@ -151,10 +154,12 @@ export default {
   p {
     @include text-link-animation;
     color: map-get($font-basic-colors, "dark");
-    font-size: 15px;
-    font-weight: 400;
+    font: {
+      size: 15px;
+      weight: 400;
+      family: $font-primary;
+    }
     line-height: 1.3;
-    font-family: $font-primary;
     text-transform: capitalize;
     margin: 0;
     padding-top: 18px;
