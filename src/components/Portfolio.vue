@@ -142,6 +142,10 @@ export default {
   img {
     width: 350px;
     height: 230px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   p {
@@ -154,6 +158,14 @@ export default {
     margin: 0;
     padding-top: 18px;
     padding-bottom: 36px;
+    transition: {
+      duration: 0.3s;
+    }
+
+    &:hover {
+      color: map-get($main-colors, "secondary");
+      cursor: pointer;
+    }
   }
 }
 </style>
