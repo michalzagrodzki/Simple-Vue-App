@@ -61,6 +61,8 @@
 </template>
 
 <script>
+import superagent from 'superagent'
+
 export default {
   name: 'Main',
   data () {
@@ -70,43 +72,7 @@ export default {
         title: 'This is example app using vue.js',
         subtitle: 'this app shows capabilities of using vue in simple cases'
       },
-      products: [
-        {
-          id: 1,
-          name: 'Paper',
-          image: ''
-        },
-        {
-          id: 2,
-          name: 'Program',
-          image: ''
-        },
-        {
-          id: 3,
-          name: 'Program',
-          image: ''
-        },
-        {
-          id: 4,
-          name: 'Program',
-          image: ''
-        },
-        {
-          id: 5,
-          name: 'Program',
-          image: ''
-        },
-        {
-          id: 6,
-          name: 'Program',
-          image: ''
-        },
-        {
-          id: 7,
-          name: 'Program',
-          image: ''
-        }
-      ],
+      products: [],
       productAction: {
         button: 'MORE PRODUCTS'
       },
@@ -122,9 +88,21 @@ export default {
       }
     }
   },
+  created () {
+    this.getProducts()
+  },
   methods: {
     linkToPortfolio: function () {
       this.$router.push({ name: 'portfolio' })
+    },
+    getProducts() {
+      superagent.get('/assets/JSON/products.json')
+        .then((response) => {
+          this.products = response.body
+        })
+        .catch((error) => {
+          console.log(error)
+        })
     }
   }
 }
