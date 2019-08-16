@@ -28,6 +28,10 @@
   box-shadow: 0 30px 60px -30px rgba(0,0,0,.45);
 }
 
+@mixin top-border {
+  border-top: 1px solid map-get($font-basic-colors, "light-grey");
+}
+
 @mixin text-link-animation {
   transition: {
     duration: 0.3s;
