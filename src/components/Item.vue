@@ -2,14 +2,14 @@
   <div>
     <nav>Nav elements</nav>
     <section>
-      <div>
+      <div class="item-container">
         <div class="item-images-column">
           <div v-for="image in images" class="item-image-item">
             <img src="image" />
             <p>{{ image.description }}</p>
           </div>
         </div>
-        <div class="item-description-section">
+        <div class="item-description-column">
           <h1>{{ title }}</h1>
           <p>{{ description }}</p>
           <div class="item-details">
@@ -78,35 +78,84 @@ export default {
 @import '../assets/SCSS/fonts.scss';
 @import '../assets/SCSS/variables.scss';
 
-.item-images-column {
+.item-container {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.item-images-column {
+  width: 50vw;
 }
 
 .item-image-item {
-
+  padding-bottom: 30px;
+  height: 570px;
   img {
 
   }
 }
 
-.item-description-section {
+.item-description-column {
+  margin-left: 50px;
+  width: 20vw;
   h1 {
-
+    color: map-get($font-basic-colors, "dark");
+    font: {
+      size: 25px;
+      weight: 700;
+      family: $font-primary;
+    }
+    line-height: 1.3;
+    text-transform: capitalize;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
   }
 
   p {
-
+    color: map-get($font-basic-colors, "grey");
+    font: {
+      size: 15px;
+      weight: 300;
+      family: $font-secondary;
+    }
+    line-height: 1.75;
+    margin: 0;
   }
 }
 
 .item-details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  line-height: 1.9;
+  padding-top: 25px;
+  margin-top: 25px;
+  @include top-border;
 
   em {
-
+    color: map-get($font-basic-colors, "grey");
+    font: {
+      size: 15px;
+      weight: 600;
+      family: $font-primary;
+      style: normal;
+    }
+    min-width: 50%;
+    
   }
 
   p {
-
+    color: map-get($font-basic-colors, "dark");
+    font: {
+      size: 15px;
+      weight: 300;
+      family: $font-secondary;
+      style: normal;
+    }
+    min-width: 50%;
   }
 }
 </style>
