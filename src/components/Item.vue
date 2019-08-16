@@ -38,6 +38,13 @@
         </div>
       </div>
     </section>
+    <section>
+      <div class="item-navigation-section">
+        <h4 v-on:click="previousProduct(id)">< Prev</h4>
+        <h4 v-on:click="linkToPortfolio()">Portfolio</h4>
+        <h4 v-on:click="nextProduct(id)">Next ></h4>
+      </div>
+    </section>
   </div>
 
 </template>
@@ -95,7 +102,20 @@ export default {
     },
     linkToProduct (itemId) {
       this.$router.push({ name: 'item', params: { id: itemId } })
-    }
+    },
+    nextProduct(currentId) {
+      const currentIdNumber = parseInt(currentId, 10)
+      let nextId = currentIdNumber + 1
+      this.$router.push({ name: 'item', params: { id: nextId } })
+    },
+    previousProduct(currentId) {
+      const currentIdNumber = parseInt(currentId, 10)
+      let previousId = currentIdNumber - 1
+      this.$router.push({ name: 'item', params: { id: previousId } })
+    },
+    linkToPortfolio: function () {
+      this.$router.push({ name: 'portfolio' })
+    },
   }
 }
 </script>
@@ -248,6 +268,31 @@ export default {
     margin: 0;
     padding-top: 18px;
     padding-bottom: 36px;
+    text-align: center;
+  }
+}
+
+.item-navigation-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: map-get($basic-colors, "grey");
+
+  h4 {
+    @include text-link-animation;
+    color: map-get($font-basic-colors, "dark");
+    font: {
+      size: 12px;
+      weight: 300;
+      family: $font-primary;
+    }
+    line-height: 1.3;
+    text-transform: uppercase;
+    margin: 0;
     text-align: center;
   }
 }
