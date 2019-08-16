@@ -1,12 +1,45 @@
 <template>
-  <div class="hello">
-    <h1>Contact view</h1>
+  <div>
+    <nav>Nav elements</nav>
+    <section>
+      <div class="contact-head-section">
+        <h1>{{ title }}</h1>
+        <h2>{{ caption.subtitle }}</h2>
+      </div>
+    </section>
+    <section>
+      <div class="contact-form-section">
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Contact'
+  name: 'Contact',
+  data () {
+    return {
+      title: '',
+      caption: {
+        subtitle: '',
+        text: ''
+      },
+      form: {
+        name: '',
+        email: '',
+        message: ''
+      },
+      submitText: '',
+      contact: {
+        title: '',
+        street: '',
+        city: '',
+        postcode: '',
+        email: '',
+        phone: ''
+      }
+    }
+  }
 }
 </script>
 
@@ -15,4 +48,12 @@ export default {
 @import '../assets/SCSS/colors.scss';
 @import '../assets/SCSS/fonts.scss';
 @import '../assets/SCSS/variables.scss';
+
+.contact-head-section {
+
+}
+
+.contact-form-section {
+
+}
 </style>
