@@ -25,6 +25,19 @@
         </div>
       </div>
     </section>
+    <section>
+      <div class="item-portfolio-section">
+        <div class="item-portfolio-header">
+          <h4>My works</h4>
+        </div>
+        <div class="item-portfolio-list">
+          <div v-for="product in products" v-bind:key="product.id" v-on:click="linkToProduct(product.id)" class="item-portfolio-product">
+          <img src="product.coverImage" />
+          <p>{{ product.name }}</p>
+        </div>
+        </div>
+      </div>
+    </section>
   </div>
 
 </template>
@@ -45,11 +58,13 @@ export default {
         services: '',
         year: '',
         link: ''
-      }
+      },
+      products: []
     }
   },
   created () {
     this.getProduct()
+    this.getLimitedProducts()
   },
   methods: {
     getProduct () {
@@ -67,6 +82,19 @@ export default {
         .catch((error) => {
           console.log(error)
         })
+    },
+    getLimitedProducts () {
+      superagent.get('/assets/JSON/products.json')
+        .then((response) => {
+          const slicedProducts = response.body.slice(0,3)
+          this.products = slicedProducts
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
+    linkToProduct (itemId) {
+      this.$router.push({ name: 'item', params: { id: itemId } })
     }
   }
 }
@@ -78,12 +106,18 @@ export default {
 @import '../assets/SCSS/fonts.scss';
 @import '../assets/SCSS/variables.scss';
 
+// shared values
+  $side-padding-grid-products-section: 100px;
+  $top-padding-grid-products-section: 50px;
+  $margin-product-item: 18px;
+
 .item-container {
   display: flex;
   flex-direction: row;
   width: 80vw;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 70px;
 }
 
 .item-images-column {
@@ -144,7 +178,6 @@ export default {
       style: normal;
     }
     min-width: 50%;
-    
   }
 
   p {
@@ -156,6 +189,66 @@ export default {
       style: normal;
     }
     min-width: 50%;
+  }
+}
+
+.item-portfolio-section {
+  @include top-border;
+  margin-top: 40px;
+  padding-top: 40px;
+}
+
+.item-portfolio-header {
+  h4 {
+    color: map-get($font-basic-colors, "dark");
+    font: {
+      size: 14px;
+      weight: 700;
+      family: $font-primary;
+    }
+    line-height: 1.3;
+    text-transform: uppercase;
+    margin: 0;
+    padding-top: 45px;
+    padding-bottom: 60px;
+    text-align: center;
+  }
+}
+
+.item-portfolio-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-portfolio-product {
+  margin-left: $margin-product-item;
+  margin-right: $margin-product-item;
+
+  img {
+    width: 350px;
+    height: 230px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  p {
+    @include text-link-animation;
+    color: map-get($font-basic-colors, "dark");
+    font: {
+      size: 15px;
+      weight: 400;
+      family: $font-primary;
+    }
+    line-height: 1.3;
+    text-transform: capitalize;
+    margin: 0;
+    padding-top: 18px;
+    padding-bottom: 36px;
+    text-align: center;
   }
 }
 </style>
