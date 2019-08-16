@@ -20,54 +20,32 @@
 </template>
 
 <script>
+import superagent from 'superagent'
+
 export default {
   name: 'Portfolio',
   data () {
     return {
       title: 'Products Portfolio',
       subtitle: 'Complete list of my products',
-      products: [
-        {
-          id: 1,
-          name: 'Paper',
-          image: ''
-        },
-        {
-          id: 2,
-          name: 'Program',
-          image: ''
-        },
-        {
-          id: 3,
-          name: 'Program',
-          image: ''
-        },
-        {
-          id: 4,
-          name: 'Program',
-          image: ''
-        },
-        {
-          id: 5,
-          name: 'Program',
-          image: ''
-        },
-        {
-          id: 6,
-          name: 'Program',
-          image: ''
-        },
-        {
-          id: 7,
-          name: 'Program',
-          image: ''
-        }
-      ]
+      products: []
     }
+  },
+  created () {
+    this.getProducts()
   },
   methods: {
     linkToProduct: function (itemId) {
       this.$router.push({ name: 'item', params: { id: itemId } })
+    },
+    getProducts() {
+      superagent.get('/assets/JSON/products.json')
+        .then((response) => {
+          this.products = response.body
+        })
+        .catch((error) => {
+          console.log(error)
+        })
     }
   }
 }
