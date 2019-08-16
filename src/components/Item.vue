@@ -30,10 +30,10 @@ export default {
     }
   },
   created () {
-    this.getProducts()
+    this.getProduct()
   },
   methods: {
-    getProducts () {
+    getProduct () {
       superagent.get('/assets/JSON/products.json')
         .then((response) => {
           const idNumber = parseInt(this.id, 10)
