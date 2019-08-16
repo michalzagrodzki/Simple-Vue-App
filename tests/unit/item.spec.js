@@ -11,7 +11,8 @@ wrapper.setData (
       year: String,
       link: String
     },
-    images: Array
+    images: Array,
+    products: Array
   }
 )
 
@@ -36,5 +37,8 @@ describe('Item', () => {
   })
   it('should contain details of link', () => { 
     expect(wrapper.vm.details.link).toBe(String)
+  })
+  it('should contain products array', () => { 
+    expect(wrapper.vm.products).toBe(Array)
   })
 })
