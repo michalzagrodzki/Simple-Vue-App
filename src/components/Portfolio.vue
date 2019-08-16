@@ -38,7 +38,7 @@ export default {
     linkToProduct: function (itemId) {
       this.$router.push({ name: 'item', params: { id: itemId } })
     },
-    getProducts() {
+    getProducts () {
       superagent.get('/assets/JSON/products.json')
         .then((response) => {
           this.products = response.body

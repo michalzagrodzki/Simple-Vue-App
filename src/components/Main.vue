@@ -95,7 +95,7 @@ export default {
     linkToPortfolio: function () {
       this.$router.push({ name: 'portfolio' })
     },
-    getProducts() {
+    getProducts () {
       superagent.get('/assets/JSON/products.json')
         .then((response) => {
           this.products = response.body
