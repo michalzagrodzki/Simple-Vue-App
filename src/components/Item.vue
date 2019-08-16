@@ -4,7 +4,7 @@
     <section>
       <div class="item-container">
         <div class="item-images-column">
-          <div v-for="image in images" class="item-image-item">
+          <div v-for="(image, index) in images" v-bind:key="index" class="item-image-item">
             <img src="image" />
             <p>{{ image.description }}</p>
           </div>
@@ -40,9 +40,9 @@
     </section>
     <section>
       <div class="item-navigation-section">
-        <h4 v-on:click="previousProduct(id)">< Prev</h4>
+        <h4 v-on:click="previousProduct(id)">&#60; Prev</h4>
         <h4 v-on:click="linkToPortfolio()">Portfolio</h4>
-        <h4 v-on:click="nextProduct(id)">Next ></h4>
+        <h4 v-on:click="nextProduct(id)">Next &#62;</h4>
       </div>
     </section>
   </div>
@@ -93,7 +93,7 @@ export default {
     getLimitedProducts () {
       superagent.get('/assets/JSON/products.json')
         .then((response) => {
-          const slicedProducts = response.body.slice(0,3)
+          const slicedProducts = response.body.slice(0, 3)
           this.products = slicedProducts
         })
         .catch((error) => {
@@ -103,19 +103,19 @@ export default {
     linkToProduct (itemId) {
       this.$router.push({ name: 'item', params: { id: itemId } })
     },
-    nextProduct(currentId) {
+    nextProduct (currentId) {
       const currentIdNumber = parseInt(currentId, 10)
       let nextId = currentIdNumber + 1
       this.$router.push({ name: 'item', params: { id: nextId } })
     },
-    previousProduct(currentId) {
+    previousProduct (currentId) {
       const currentIdNumber = parseInt(currentId, 10)
       let previousId = currentIdNumber - 1
       this.$router.push({ name: 'item', params: { id: previousId } })
     },
     linkToPortfolio: function () {
       this.$router.push({ name: 'portfolio' })
-    },
+    }
   }
 }
 </script>
