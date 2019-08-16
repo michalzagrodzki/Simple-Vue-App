@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import superagent from 'superagent'
+
 export default {
   name: 'Item',
   props: [ 'id' ],
@@ -26,6 +28,22 @@ export default {
         link: ''
       }
     }
+  },
+  created () {
+    superagent.get('/assets/JSON/products.json')
+      .then((response) => {
+        const idNumber = parseInt(this.id, 10)
+        const selectedItem = response.body.find((item) => {
+          return item.id === idNumber
+        })
+        this.title = selectedItem.name
+        this.description = selectedItem.description
+        this.images = selectedItem.images
+        this.details = selectedItem.details
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 }
 </script>
