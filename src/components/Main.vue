@@ -29,7 +29,7 @@
       </div>
       <div class="products-row">
         <div v-for="product in products" v-bind:key="product.id" class="product-item">
-          <img src="product.image" />
+          <img src="product.coverImage" />
           <p>{{ product.name }}</p>
         </div>
       </div>
