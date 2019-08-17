@@ -60,6 +60,18 @@ export default {
         phone: ''
       }
     }
+  },
+  created () {
+    this.title = `Let's talk.`
+    this.caption.subtitle = 'We are located in Lower Downtown of your city.'
+    this.caption.text = 'Ecstatic advanced and procured civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met. Met any nor may through resolve entered. An mr cause tried oh do shade happy.'
+    this.submitText = 'Send question'
+    this.contact.title = 'Office'
+    this.contact.street = '219 E 4th St'
+    this.contact.city = 'New York'
+    this.contact.postcode = '10001'
+    this.contact.email = 'your@email.com'
+    this.contact.phone = '+88 (0) 101 0000 000'
   }
 }
 </script>
@@ -73,7 +85,7 @@ export default {
 .contact-head-section {
 
   h1 {
-    
+
   }
 }
 
