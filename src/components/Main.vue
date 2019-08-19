@@ -1,6 +1,5 @@
 <template>
   <div>
-    <nav-bar></nav-bar>
     <section>
       <div class="head-section">
         <h1>{{ title }}</h1>
@@ -52,21 +51,15 @@
         </form>
       </div>
     </section>
-    <section>
-      <div class="footer-section">
-        <p>Copyright 2019</p>
-      </div>
-    </section>
   </div>
 </template>
 
 <script>
 import superagent from 'superagent'
-import navBar from './Partials/nav'
+
 
 export default {
   name: 'Main',
-  components: { navBar },
   data () {
     return {
       title: 'Simple Vue App',

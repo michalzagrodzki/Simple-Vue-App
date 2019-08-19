@@ -1,6 +1,5 @@
 <template>
   <div>
-    <nav-bar></nav-bar>
     <section>
       <div class="item-container">
         <div class="item-images-column">

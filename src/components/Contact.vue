@@ -1,6 +1,5 @@
 <template>
   <div>
-    <nav-bar></nav-bar>
     <section>
       <div class="contact-head-section">
         <h1>{{ title }}</h1>

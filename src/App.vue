@@ -1,12 +1,18 @@
 <template>
   <div id="app">
+    <nav-bar></nav-bar>
     <router-view></router-view>
+    <footer-bar></footer-bar>
   </div>
 </template>
 
 <script>
+import navBar from './components/Partials/nav'
+import footerBar from './components/Partials/footer'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: { navBar, footerBar }
 }
 </script>
 <style lang="scss">
