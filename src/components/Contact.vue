@@ -11,9 +11,9 @@
         <h2>{{ caption.subtitle }}</h2>
         <h4>{{ caption.text }}</h4>
         <form>
-          <input type="text" placeholder="your name">
-          <input type="text" placeholder="your email">
-          <input type="text" placeholder="your message">
+          <input type="text" v-model="form.name" placeholder="your name">
+          <input type="text" v-model="form.email" placeholder="your email">
+          <input type="text" v-model="form.message" placeholder="your message">
           <button class="submit-button">{{ submitText }}</button>
         </form>
       </div>
