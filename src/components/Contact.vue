@@ -21,6 +21,7 @@
     <section>
       <div class="contact-address-section">
         <h2>{{ contact.title }}</h2>
+        <h4>{{ contact.description }}</h4>
         <p>{{ contact.street }}</p>
         <p>{{ contact.city }}</p>
         <p>{{ contact.postcode }}</p>
@@ -53,6 +54,7 @@ export default {
       submitText: '',
       contact: {
         title: '',
+        description: '',
         street: '',
         city: '',
         postcode: '',
@@ -64,9 +66,10 @@ export default {
   created () {
     this.title = `Let's talk.`
     this.caption.subtitle = 'We are located in Lower Downtown of your city.'
-    this.caption.text = 'Ecstatic advanced and procured civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met. Met any nor may through resolve entered. An mr cause tried oh do shade happy.'
+    this.caption.text = 'Ecstatic advanced and procured civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression.'
     this.submitText = 'Send question'
     this.contact.title = 'Office'
+    this.contact.description = 'Little afraid its eat looked now. Very ye lady girl them good me make. It hardly cousin me always. An shortly village is raising we shewing replied. She the favourable partiality inhabiting travelling impression put two'
     this.contact.street = '219 E 4th St'
     this.contact.city = 'New York'
     this.contact.postcode = '10001'
@@ -186,7 +189,7 @@ export default {
 .contact-address-section {
   display: flex;
   background-color: map-get($basic-colors, "light");
-  width: 20vw;
+  width: 35vw;
   flex-direction: column;
   justify-content: center;
   margin-left: auto;
@@ -208,11 +211,23 @@ export default {
     margin-left: auto;
     margin-right: auto;
   }
-  p {
+
+  h4 {
     color: map-get($font-basic-colors, "grey");
     font: {
       family: $font-secondary;
       size: 18px;
+      weight: 300;
+    }
+    line-height: 1.75;
+    margin-bottom: 60px;
+  }
+
+  p {
+    color: map-get($font-basic-colors, "dark");
+    font: {
+      family: $font-primary;
+      size: 24px;
       weight: 300;
     }
     line-height: 1.5;
