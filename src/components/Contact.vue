@@ -186,7 +186,7 @@ export default {
 .contact-address-section {
   display: flex;
   background-color: map-get($basic-colors, "light");
-  width: 35vw;
+  width: 20vw;
   flex-direction: column;
   justify-content: center;
   margin-left: auto;
@@ -211,11 +211,11 @@ export default {
   p {
     color: map-get($font-basic-colors, "grey");
     font: {
-      family: $font-primary;
+      family: $font-secondary;
       size: 18px;
       weight: 300;
     }
-    line-height: 1.2;
+    line-height: 1.5;
     margin: 0;
     text-align: center;
   }
@@ -237,6 +237,7 @@ export default {
       family: $font-primary;
       style: normal;
     }
+    line-height: 2;
     width: 25%;
   }
   p {
@@ -247,6 +248,7 @@ export default {
       family: $font-secondary;
       style: normal;
     }
+    line-height: 1.8;
     width: 75%;
   }
 }
