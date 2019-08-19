@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav>Nav elements</nav>
+    <nav-bar></nav-bar>
     <section>
       <div class="portfolio-head-section">
         <h1>{{ title }}</h1>
@@ -21,9 +21,11 @@
 
 <script>
 import superagent from 'superagent'
+import navBar from './Partials/nav'
 
 export default {
   name: 'Portfolio',
+  components: { navBar },
   data () {
     return {
       title: 'Products Portfolio',

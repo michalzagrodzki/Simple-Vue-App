@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav>Nav elements</nav>
+    <nav-bar></nav-bar>
     <section>
       <div class="item-container">
         <div class="item-images-column">
@@ -51,10 +51,12 @@
 
 <script>
 import superagent from 'superagent'
+import navBar from './Partials/nav'
 
 export default {
   name: 'Item',
   props: [ 'id' ],
+  components: { navBar },
   data () {
     return {
       title: '',

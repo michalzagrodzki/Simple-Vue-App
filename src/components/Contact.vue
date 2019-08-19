@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav>Nav elements</nav>
+    <nav-bar></nav-bar>
     <section>
       <div class="contact-head-section">
         <h1>{{ title }}</h1>
@@ -37,8 +37,11 @@
 </template>
 
 <script>
+import navBar from './Partials/nav'
+
 export default {
   name: 'Contact',
+  components: { navBar },
   data () {
     return {
       title: '',
