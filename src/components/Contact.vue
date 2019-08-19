@@ -101,9 +101,24 @@ export default {
 @import '../assets/SCSS/variables.scss';
 
 .contact-head-section {
+  display: flex;
+  background-color: map-get($main-colors, "primary");
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
 
   h1 {
-
+    color: map-get($font-basic-colors, "light");
+    font: {
+      family: $font-primary;
+      size: 50px;
+      height: .95;
+      weight: 900;
+    }
+    text-transform: capitalize;
+    width: 30%;
+    text-align: center;
+    letter-spacing: -2px;
   }
 }
 
