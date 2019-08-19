@@ -31,7 +31,7 @@
         </div>
         <div class="item-portfolio-list">
           <div v-for="product in products" v-bind:key="product.id" v-on:click="linkToProduct(product.id)" class="item-portfolio-product">
-          <img src="product.coverImage" />
+          <img :src="product.coverImage" />
           <p>{{ product.name }}</p>
         </div>
         </div>
