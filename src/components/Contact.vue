@@ -111,10 +111,10 @@ export default {
     color: map-get($font-basic-colors, "light");
     font: {
       family: $font-primary;
-      size: 50px;
-      height: .95;
+      size: 55px;
       weight: 900;
     }
+    line-height: .95;
     text-transform: capitalize;
     width: 30%;
     text-align: center;
@@ -123,13 +123,64 @@ export default {
 }
 
 .contact-form-section {
+  display: flex;
+  background-color: map-get($basic-colors, "light");
+  width: 35vw;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -10vh;
+  padding: 80px 10vw 35px 10vw;
 
   h2 {
-
+    color: map-get($font-basic-colors, "dark");
+    font: {
+      family: $font-primary;
+      size: 35px;
+      weight: 300;
+    }
+    line-height: 1.2;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
   }
   h4 {
-
+    color: map-get($font-basic-colors, "grey");
+    font: {
+      family: $font-secondary;
+      size: 18px;
+      weight: 300;
+    }
+    line-height: 1.75;
+    margin-bottom: 60px;
   }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      font-family: $font-secondary;
+      color: map-get($font-basic-colors, "dark");
+      font-size: 18px;
+      font-weight: 400;
+      padding: 16px 30px;
+      margin: 10px 0 10px 0;
+      width: 30vw;
+    }
+  }
+}
+
+.submit-button {
+  @include action-button;
+  margin: 40px 0 50px 0;
+  font: {
+    size: 12px
+  }
+  text-transform: uppercase;
 }
 
 .contact-address-section {
