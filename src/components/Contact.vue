@@ -184,22 +184,70 @@ export default {
 }
 
 .contact-address-section {
+  display: flex;
+  background-color: map-get($basic-colors, "light");
+  width: 35vw;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 10vw 35px 10vw;
+  @include top-border;
 
   h2 {
-
+    color: map-get($font-basic-colors, "dark");
+    font: {
+      family: $font-primary;
+      size: 35px;
+      weight: 300;
+    }
+    line-height: 1.2;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   p {
-
+    color: map-get($font-basic-colors, "grey");
+    font: {
+      family: $font-primary;
+      size: 18px;
+      weight: 300;
+    }
+    line-height: 1.2;
+    margin: 0;
+    text-align: center;
   }
 }
 
 .contact-details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  line-height: 1.9;
+  padding-top: 25px;
+  margin-top: 25px;
 
   em {
-
+    color: map-get($font-basic-colors, "grey");
+    font: {
+      size: 18px;
+      weight: 600;
+      family: $font-primary;
+      style: normal;
+    }
+    width: 25%;
   }
   p {
-
+    color: map-get($font-basic-colors, "dark");
+    font: {
+      size: 18px;
+      weight: 300;
+      family: $font-secondary;
+      style: normal;
+    }
+    width: 75%;
   }
 }
 </style>
