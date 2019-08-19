@@ -48,7 +48,7 @@
           <input type="text" v-model="form.name" placeholder="your name">
           <input type="text" v-model="form.email" placeholder="your email">
           <input type="text" v-model="form.message" placeholder="your message">
-          <button class="submit-button">{{ contact.button }}</button>
+          <button v-on:click.prevent="postMessage()" class="submit-button">{{ contact.button }}</button>
         </form>
       </div>
     </section>
@@ -108,6 +108,22 @@ export default {
         .catch((error) => {
           console.log(error)
         })
+    },
+    postMessage () {
+      if (this.form.name !== '' && this.form.email !== '' && this.form.mesage !== '') {
+        superagent.post('api/contact')
+          .set('Content-Type', 'application/json')
+          .send({ 
+            name: this.name, 
+            email: this.email, 
+            message: this.message })
+          .then((response) => {
+            console.log(response)
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      }
     }
   }
 }

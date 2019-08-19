@@ -14,7 +14,7 @@
           <input type="text" v-model="form.name" placeholder="your name">
           <input type="text" v-model="form.email" placeholder="your email">
           <input type="text" v-model="form.message" placeholder="your message">
-          <button class="submit-button">{{ submitText }}</button>
+          <button v-on:click.prevent="postMessage()" class="submit-button">{{ submitText }}</button>
         </form>
       </div>
     </section>
@@ -72,6 +72,24 @@ export default {
     this.contact.postcode = '10001'
     this.contact.email = 'your@email.com'
     this.contact.phone = '+88 (0) 101 0000 000'
+  },
+  methods: {
+    postMessage () {
+      if (this.form.name !== '' && this.form.email !== '' && this.form.mesage !== '') {
+        superagent.post('api/contact')
+          .set('Content-Type', 'application/json')
+          .send({ 
+            name: this.name, 
+            email: this.email, 
+            message: this.message })
+          .then((response) => {
+            console.log(response)
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      }
+    }
   }
 }
 </script>
