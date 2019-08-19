@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     postMessage () {
-      if (this.form.name !== '' && this.form.email !== '' && this.form.mesage !== '') {
+      if (this.form.name !== '' && this.form.email !== '' && this.form.message !== '') {
         superagent.post('api/contact')
           .set('Content-Type', 'application/json')
           .send({ 
