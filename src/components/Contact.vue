@@ -186,6 +186,10 @@ export default {
     size: 12px
   }
   text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+    }
 }
 
 .contact-address-section {
