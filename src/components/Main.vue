@@ -274,6 +274,10 @@ export default {
   min-width: 340px;
   height: 460px;
   margin: 0 20px 0 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
 }
 
 .products-footer {
@@ -288,6 +292,10 @@ export default {
 .product-button {
   @include action-button;
   margin-bottom: 65px;
+
+    &:hover {
+      cursor: pointer;
+    }
 }
 
 .contact-section {
@@ -335,6 +343,10 @@ export default {
 .submit-button {
   @include action-button;
   margin: 40px 0 50px 0;
+
+    &:hover {
+      cursor: pointer;
+    }
 }
 
 .footer-section {
