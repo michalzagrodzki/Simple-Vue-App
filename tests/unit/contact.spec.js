@@ -16,6 +16,7 @@ wrapper.setData(
     submitText: String,
     contact: {
       title: String,
+      description: String,
       street: String,
       city: String,
       postcode: String,
@@ -49,6 +50,9 @@ describe('Contact', () => {
   })
   it('should contain contact details title', () => {
     expect(wrapper.vm.contact.title).toBe(String)
+  })
+  it('should contain contact details description', () => {
+    expect(wrapper.vm.contact.description).toBe(String)
   })
   it('should contain street address contact', () => {
     expect(wrapper.vm.contact.street).toBe(String)
