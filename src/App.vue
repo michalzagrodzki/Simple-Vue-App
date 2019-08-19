@@ -16,4 +16,7 @@ body {
 h1, h2, h3, h4 {
   margin: 0px;
 }
+a {
+	text-decoration: none;
+}
 </style>
