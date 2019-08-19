@@ -62,24 +62,24 @@ export default {
   name: 'Main',
   data () {
     return {
-      title: 'Simple Vue App',
+      title: '',
       message: {
-        title: 'This is example app using vue.js',
-        subtitle: 'this app shows capabilities of using vue in simple cases'
+        title: '',
+        subtitle: ''
       },
       products: [],
       productAction: {
-        button: 'MORE PRODUCTS'
+        button: ''
       },
       contact: {
-        title: 'Take a contact with us',
-        subtitle: 'We are working with different people on different projects',
-        button: 'SEND MESSAGE'
+        title: '',
+        subtitle: '',
+        button: ''
       },
       sections: {
-        message: 'VUE APP',
-        products: 'Products',
-        contact: 'Contact'
+        message: '',
+        products: '',
+        contact: ''
       },
       form: {
         name: '',
@@ -89,6 +89,22 @@ export default {
     }
   },
   created () {
+    this.title = 'Simple Vue App'
+    this.message = {
+      title: 'This is example app using vue.js',
+      subtitle: 'this app shows capabilities of using vue in simple cases'
+    }
+    this.productAction.button = 'MORE PRODUCTS'
+    this.contact = {
+      title: 'Take a contact with us',
+      subtitle: 'We are working with different people on different projects',
+      button: 'SEND MESSAGE'
+    }
+    this.sections = {
+      message: 'VUE APP',
+      products: 'Products',
+      contact: 'Contact'
+    }
     this.getProducts()
   },
   methods: {

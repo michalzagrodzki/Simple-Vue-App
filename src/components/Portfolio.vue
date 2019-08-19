@@ -27,13 +27,15 @@ export default {
   components: { navBar },
   data () {
     return {
-      title: 'Products Portfolio',
-      subtitle: 'Complete list of my products',
+      title: '',
+      subtitle: '',
       products: []
     }
   },
   created () {
     this.getProducts()
+    this.title = 'Products Portfolio'
+    this.subtitle = 'Complete list of my products'
   },
   methods: {
     linkToProduct: function (itemId) {
