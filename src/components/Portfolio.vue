@@ -77,7 +77,7 @@ export default {
   h1 {
     color: map-get($font-basic-colors, "light");
     font: {
-      size: 65px;
+      size: 50px;
       weight: 700;
       family: $font-primary;
     }
@@ -86,19 +86,20 @@ export default {
     width: 100%;
     text-align: center;
     letter-spacing: -3px;
+    margin-bottom: 15px;
   }
 
   h2 {
     color: map-get($font-basic-colors, "light");
     font: {
-      size: 30px;
+      size: 25px;
       weight: 700;
       family: $font-primary;
     }
-    line-height: 1.3;
+    line-height: 1.1;
     font-family: $font-primary;
     text-transform: capitalize;
-    width: 100%;
+    width: 20vw;
     text-align: center;
     letter-spacing: 1px;
   }
