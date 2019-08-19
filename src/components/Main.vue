@@ -29,7 +29,9 @@
       <div class="products-row">
         <div v-for="product in products" v-bind:key="product.id" class="product-item" v-on:click="linkToProduct(product.id)">
           <img :src="product.coverImage" />
-          <p>{{ product.name }}</p>
+          <div class="overlay">
+            <p>{{ product.name }}</p>
+          </div>
         </div>
       </div>
       <div class="products-footer">
@@ -271,13 +273,49 @@ export default {
   @include product-shadow;
   background-color: map-get($basic-colors, "light");
   display: flex;
+  position: relative;
   min-width: 340px;
   height: 460px;
   margin: 0 20px 0 20px;
 
     &:hover {
       cursor: pointer;
+      
     }
+
+    img {
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-color: darken(map-get($main-colors, "secondary"), 15%);
+      transition: {
+        duration: 0.3s;
+      }
+
+      &:hover {
+        opacity: 0.5;
+
+      }
+
+      p {
+        opacity: 1 !important;
+        text-align: center;
+        margin-top: 60%;
+        color: map-get($font-basic-colors, "light");
+        font: {
+          size: 35px;
+          weight: 300;
+          family: $font-primary;
+        }
+      }
+    }
+
 }
 
 .products-footer {
