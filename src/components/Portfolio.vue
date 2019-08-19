@@ -21,6 +21,7 @@
 <script>
 import superagent from 'superagent'
 import navBar from './Partials/nav'
+import { linkToProduct } from './../methods/methods'
 
 export default {
   name: 'Portfolio',
@@ -38,8 +39,8 @@ export default {
     this.subtitle = 'Complete list of my products'
   },
   methods: {
-    linkToProduct: function (itemId) {
-      this.$router.push({ name: 'item', params: { id: itemId } })
+    linkToProduct (item) {
+      linkToProduct(item, this)
     },
     getProducts () {
       superagent.get('/assets/JSON/products.json')
