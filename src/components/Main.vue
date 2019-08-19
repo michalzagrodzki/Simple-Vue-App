@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="products-row">
-        <div v-for="product in products" v-bind:key="product.id" class="product-item">
+        <div v-for="product in products" v-bind:key="product.id" class="product-item" v-on:click="linkToProduct(product.id)">
           <img src="product.coverImage" />
           <p>{{ product.name }}</p>
         </div>
@@ -56,7 +56,7 @@
 
 <script>
 import superagent from 'superagent'
-
+import { linkToProduct } from './../methods/methods'
 
 export default {
   name: 'Main',
@@ -110,6 +110,9 @@ export default {
   methods: {
     linkToPortfolio: function () {
       this.$router.push({ name: 'portfolio' })
+    },
+    linkToProduct (item) {
+      linkToProduct(item, this)
     },
     getProducts () {
       superagent.get('/assets/JSON/products.json')
