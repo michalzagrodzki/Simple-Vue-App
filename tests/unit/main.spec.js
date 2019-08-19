@@ -21,6 +21,11 @@ wrapper.setData(
       message: String,
       products: String,
       contact: String
+    },
+    form: {
+      name: String,
+      email: String,
+      message: String
     }
   }
 )
@@ -58,5 +63,14 @@ describe('Main', () => {
   })
   it('should contain contact section text', () => {
     expect(wrapper.vm.sections.contact).toBe(String)
+  })
+  it('should contain form field for name', () => {
+    expect(wrapper.vm.form.name).toBe(String)
+  })
+  it('should contain form field for email', () => {
+    expect(wrapper.vm.form.email).toBe(String)
+  })
+  it('should contain form field for message', () => {
+    expect(wrapper.vm.form.message).toBe(String)
   })
 })
