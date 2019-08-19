@@ -137,6 +137,7 @@ export default {
   margin-right: auto;
   margin-top: -10vh;
   padding: 80px 10vw 35px 10vw;
+  @include field-shadow;
 
   h2 {
     color: map-get($font-basic-colors, "dark");
@@ -200,8 +201,10 @@ export default {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 80px;
   padding: 80px 10vw 35px 10vw;
   @include top-border;
+  @include field-shadow;
 
   h2 {
     color: map-get($font-basic-colors, "dark");
