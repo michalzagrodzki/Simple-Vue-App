@@ -147,7 +147,7 @@ export default {
 
 .item-image-item {
   padding-bottom: 30px;
-  height: 570px;
+  max-height: 700px;
   display: flex;
   flex-direction: column;
   position: relative;
