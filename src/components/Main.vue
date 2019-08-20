@@ -286,6 +286,7 @@ export default {
     img {
       overflow-x: hidden;
       overflow-y: hidden;
+      object-fit: cover;
     }
 
     .overlay {

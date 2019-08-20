@@ -123,11 +123,16 @@ export default {
 .portfolio-product-item {
   margin-left: $margin-product-item;
   margin-right: $margin-product-item;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 350px;
+  height: 230px;
 
   img {
-    width: 350px;
-    height: 230px;
-
+    overflow-x: hidden;
+    overflow-y: hidden;
+    object-fit: cover;
     &:hover {
       cursor: pointer;
     }
