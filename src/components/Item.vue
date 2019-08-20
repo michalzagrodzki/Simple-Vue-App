@@ -4,7 +4,7 @@
       <div class="item-container">
         <div class="item-images-column">
           <div v-for="(image, index) in images" v-bind:key="index" class="item-image-item">
-            <img src="image" />
+            <img :src="image.link" />
             <p>{{ image.description }}</p>
           </div>
         </div>
@@ -148,8 +148,24 @@ export default {
 .item-image-item {
   padding-bottom: 30px;
   height: 570px;
-  img {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 
+  img {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    object-fit: cover;
+  }
+
+  p {
+    color: map-get($font-basic-colors, "grey");
+    font: {
+      size: 15px;
+      weight: 300;
+      family: $font-primary;
+      style: normal;
+    }
   }
 }
 
