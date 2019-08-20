@@ -129,9 +129,9 @@ export default {
       if (this.form.name !== '' && this.form.email !== '' && this.form.mesage !== '') {
         superagent.post('api/contact')
           .set('Content-Type', 'application/json')
-          .send({ 
-            name: this.name, 
-            email: this.email, 
+          .send({
+            name: this.name,
+            email: this.email,
             message: this.message })
           .then((response) => {
             console.log(response)
@@ -280,7 +280,7 @@ export default {
 
     &:hover {
       cursor: pointer;
-      
+
     }
 
     img {

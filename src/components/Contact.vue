@@ -36,11 +36,10 @@
 </template>
 
 <script>
-import navBar from './Partials/nav'
+import superagent from 'superagent'
 
 export default {
   name: 'Contact',
-  components: { navBar },
   data () {
     return {
       title: '',
@@ -83,9 +82,9 @@ export default {
       if (this.form.name !== '' && this.form.email !== '' && this.form.message !== '') {
         superagent.post('api/contact')
           .set('Content-Type', 'application/json')
-          .send({ 
-            name: this.name, 
-            email: this.email, 
+          .send({
+            name: this.name,
+            email: this.email,
             message: this.message })
           .then((response) => {
             console.log(response)
