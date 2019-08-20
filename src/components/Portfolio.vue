@@ -20,12 +20,10 @@
 
 <script>
 import superagent from 'superagent'
-import navBar from './Partials/nav'
 import { linkToProduct } from './../methods/methods'
 
 export default {
   name: 'Portfolio',
-  components: { navBar },
   data () {
     return {
       title: '',

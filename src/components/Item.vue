@@ -50,12 +50,10 @@
 
 <script>
 import superagent from 'superagent'
-import navBar from './Partials/nav'
 
 export default {
   name: 'Item',
   props: [ 'id' ],
-  components: { navBar },
   data () {
     return {
       title: '',
