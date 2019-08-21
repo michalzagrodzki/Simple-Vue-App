@@ -28,7 +28,10 @@ export default {
     return {
       title: '',
       subtitle: '',
-      products: []
+      products: [],
+      error: {
+        message: ''
+      }
     }
   },
   created () {
@@ -46,7 +49,7 @@ export default {
           this.products = response.body
         })
         .catch((error) => {
-          console.log(error)
+          this.error.message = error
         })
     }
   }
