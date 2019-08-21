@@ -65,7 +65,10 @@ export default {
         year: '',
         link: ''
       },
-      products: []
+      products: [],
+      error: {
+        message: ''
+      }
     }
   },
   created () {
@@ -86,7 +89,7 @@ export default {
           this.details = selectedItem.details
         })
         .catch((error) => {
-          console.log(error)
+          this.error.message = error
         })
     },
     getLimitedProducts () {
@@ -96,7 +99,7 @@ export default {
           this.products = slicedProducts
         })
         .catch((error) => {
-          console.log(error)
+          this.error.message = error
         })
     },
     linkToProduct (itemId) {
