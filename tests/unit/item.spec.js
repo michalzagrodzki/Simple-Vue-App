@@ -12,7 +12,10 @@ wrapper.setData(
       link: String
     },
     images: Array,
-    products: Array
+    products: Array,
+    error: {
+      message: String
+    }
   }
 )
 
@@ -40,5 +43,8 @@ describe('Item', () => {
   })
   it('should contain products array', () => {
     expect(wrapper.vm.products).toBe(Array)
+  })
+  it('should contain error message field', () => {
+    expect(wrapper.vm.error.message).toBe(String)
   })
 })
