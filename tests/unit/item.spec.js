@@ -1,7 +1,11 @@
 import { mount } from '@vue/test-utils'
 import Item from '@/components/Item.vue'
 
-const wrapper = mount(Item)
+const wrapper = mount(Item, {
+  propsData: {
+    id: String
+  }
+})
 wrapper.setData(
   { 
     title: String,
@@ -21,6 +25,9 @@ wrapper.setData(
 )
 
 describe('Item', () => {
+  it('should contain props id variable', () => {
+    expect(wrapper.props().id).toBe(String)
+  })
   it('should contain product title', () => {
     expect(wrapper.vm.title).toBe(String)
   })
