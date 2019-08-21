@@ -22,6 +22,14 @@ wrapper.setData(
       postcode: String,
       email: String,
       phone: String
+    },
+    subimittedMessage: {
+      name: String,
+      email: String,
+      message: String
+    },
+    error: {
+      message: String
     }
   }
 )
@@ -68,5 +76,17 @@ describe('Contact', () => {
   })
   it('should contain phone contact', () => {
     expect(wrapper.vm.contact.phone).toBe(String)
+  })
+  it('should contain error message field', () => {
+    expect(wrapper.vm.error.message).toBe(String)
+  })
+  it('should contain submitted message name field', () => {
+    expect(wrapper.vm.subimittedMessage.name).toBe(String)
+  })
+  it('should contain submitted message email field', () => {
+    expect(wrapper.vm.subimittedMessage.email).toBe(String)
+  })
+  it('should contain submitted message text field', () => {
+    expect(wrapper.vm.subimittedMessage.message).toBe(String)
   })
 })
