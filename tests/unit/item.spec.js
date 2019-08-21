@@ -3,7 +3,8 @@ import Item from '@/components/Item.vue'
 
 const wrapper = mount(Item)
 wrapper.setData(
-  { title: String,
+  { 
+    title: String,
     description: String,
     details: {
       client: String,

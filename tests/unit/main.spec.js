@@ -3,7 +3,8 @@ import Main from '@/components/Main.vue'
 
 const wrapper = mount(Main)
 wrapper.setData(
-  { title: String,
+  { 
+    title: String,
     message: {
       title: String,
       subtitle: String

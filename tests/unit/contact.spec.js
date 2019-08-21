@@ -3,7 +3,8 @@ import Contact from '@/components/Contact.vue'
 
 const wrapper = mount(Contact)
 wrapper.setData(
-  { title: String,
+  { 
+    title: String,
     caption: {
       subtitle: String,
       text: String

@@ -3,7 +3,8 @@ import Portfolio from '@/components/Portfolio.vue'
 
 const wrapper = mount(Portfolio)
 wrapper.setData(
-  { title: String,
+  { 
+    title: String,
     subtitle: String,
     products: Array,
     error: {
