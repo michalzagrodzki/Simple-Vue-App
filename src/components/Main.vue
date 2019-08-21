@@ -87,6 +87,14 @@ export default {
         name: '',
         email: '',
         message: ''
+      },
+      error: {
+        message: ''
+      },
+      subimittedMessage: {
+        name: '',
+        email: '',
+        message: ''
       }
     }
   },
@@ -122,7 +130,7 @@ export default {
           this.products = response.body
         })
         .catch((error) => {
-          console.log(error)
+          this.error.message = error
         })
     },
     postMessage () {
@@ -134,10 +142,12 @@ export default {
             email: this.email,
             message: this.message })
           .then((response) => {
-            console.log(response)
+            this.subimittedMessage.name = response.body.name
+            this.subimittedMessage.email = response.body.email
+            this.subimittedMessage.message = response.body.message
           })
           .catch((error) => {
-            console.log(error)
+            this.error.message = error
           })
       }
     }
