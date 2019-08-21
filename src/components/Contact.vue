@@ -61,6 +61,14 @@ export default {
         postcode: '',
         email: '',
         phone: ''
+      },
+      error: {
+        message: ''
+      },
+      subimittedMessage: {
+        name: '',
+        email: '',
+        message: ''
       }
     }
   },
@@ -87,10 +95,12 @@ export default {
             email: this.email,
             message: this.message })
           .then((response) => {
-            console.log(response)
+            this.subimittedMessage.name = response.body.name
+            this.subimittedMessage.email = response.body.email
+            this.subimittedMessage.message = response.body.message
           })
           .catch((error) => {
-            console.log(error)
+            this.error.message = error
           })
       }
     }
