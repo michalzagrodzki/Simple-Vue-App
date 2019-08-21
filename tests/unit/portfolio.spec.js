@@ -5,7 +5,10 @@ const wrapper = mount(Portfolio)
 wrapper.setData(
   { title: String,
     subtitle: String,
-    products: Array
+    products: Array,
+    error: {
+      message: String
+    }
   }
 )
 
@@ -18,5 +21,8 @@ describe('Portfolio', () => {
   })
   it('should contain products array', () => {
     expect(wrapper.vm.products).toBe(Array)
+  })
+  it('should contain error message field', () => {
+    expect(wrapper.vm.error.message).toBe(String)
   })
 })
