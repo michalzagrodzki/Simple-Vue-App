@@ -66,6 +66,7 @@ export default {
         link: ''
       },
       products: [],
+      productsLength: Number,
       error: {
         message: ''
       }
@@ -95,8 +96,10 @@ export default {
     getLimitedProducts () {
       superagent.get('/assets/JSON/products.json')
         .then((response) => {
+          const productsLength = parseInt(response.body.length, 10)
           const slicedProducts = response.body.slice(0, 3)
           this.products = slicedProducts
+          this.productsLength = productsLength
         })
         .catch((error) => {
           this.error.message = error
@@ -107,13 +110,18 @@ export default {
     },
     nextProduct (currentId) {
       const currentIdNumber = parseInt(currentId, 10)
-      let nextId = currentIdNumber + 1
-      this.$router.push({ name: 'item', params: { id: nextId } })
+      const productsLength = this.productsLength
+      if (currentIdNumber < productsLength) {
+        let nextId = currentIdNumber + 1
+        this.$router.push({ name: 'item', params: { id: nextId } })
+      }
     },
     previousProduct (currentId) {
       const currentIdNumber = parseInt(currentId, 10)
-      let previousId = currentIdNumber - 1
-      this.$router.push({ name: 'item', params: { id: previousId } })
+      if (currentIdNumber > 1) {
+        let previousId = currentIdNumber - 1
+        this.$router.push({ name: 'item', params: { id: previousId } })
+      }
     },
     linkToPortfolio: function () {
       this.$router.push({ name: 'portfolio' })
