@@ -234,6 +234,11 @@ export default {
 
 .subtitle-header {
   @include header;
+
+  h4 {
+    @include header-text;
+    color: map-get($font-basic-colors, "light");
+  }
 }
 
 .subtitle-body {
@@ -257,7 +262,6 @@ export default {
   width: 30vw;
   margin-top: 50px;
   margin-bottom: -35vh;
-  color: map-get($font-basic-colors, "light");
   justify-content: flex-start;
   padding: 0 40px 40px 40px;
   @include field-shadow;
@@ -266,6 +270,11 @@ export default {
 
 .product-header {
   @include header;
+
+  h4 {
+    @include header-text;
+    color: map-get($font-basic-colors, "light");
+  }
 }
 
 .products-row {
@@ -386,7 +395,10 @@ export default {
 
 .contact-header {
   @include header;
-  color: map-get($font-basic-colors, "light");
+  h4 {
+    @include header-text;
+    color: map-get($font-basic-colors, "light");
+  }
 }
 
 .submit-button {
