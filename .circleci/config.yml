@@ -2,15 +2,14 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2
-jobs:
-  build:
+version: 2.1
+executors:
+  node-executor:
     docker:
-      # specify the version you desire here
       - image: circleci/node:lts
 
-    working_directory: ~/simple-vue-app
-
+commands:
+  app-build: 
     steps:
       - checkout
 
@@ -29,20 +28,63 @@ jobs:
           paths:
             - node_modules
           key: simple-vue-app-dep-{{ checksum "package.json" }}
+      
+jobs:
+  build:
+    executor: node-executor
+    working_directory: ~/simple-vue-app
+    steps:
+      - app-build
 
-      # Run tests!
+  test:
+    executor: node-executor
+    working_directory: ~/simple-vue-app
+    steps:
+      - app-build
       - run: 
           name: Run unit tests
           command: yarn test:unit
+
+  deploy:
+    executor: node-executor
+    environment:
+      NETLIFY_SITE_ID: YOUR_NETLIFY_SITE_ID
+      NETLIFY_ACCESS_TOKEN: A_NETLIFY_ACCESS_TOKEN
+    working_directory: ~/simple-vue-app
+    steps:
+      - app-build
+      - restore_cache:
+          keys:
+            - vue-app-dist-cache-{{ .Branch }}
+      - run:
+          name: App Build
+          command: yarn build
+      - save_cache:
+          key: vue-app-dist-cache-{{ .Branch }}
+          paths:
+            - ./dist
+      - run:
+          name: Netlify Deploy
+          command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --dir=dist -p
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              only: master
       - test:
           requires:
             - build
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires:
+            - build
+            - test
           filters:
             branches:
               only: master
