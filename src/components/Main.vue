@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="products-footer">
-        <button v-on:click="linkToPortfolio()" class="product-button">{{ productAction.button }}</button>
+        <button v-on:click="linkToPortfolio()">{{ productAction.button }}</button>
       </div>
     </section>
     <section>
@@ -345,15 +345,15 @@ export default {
   align-items: flex-end;
   justify-content: center;
   margin-top: -40vh;
-}
 
-.product-button {
-  @include action-button;
-  margin-bottom: 65px;
+  button {
+    @include action-button;
+    margin-bottom: 65px;
 
-    &:hover {
-      cursor: pointer;
-    }
+      &:hover {
+        cursor: pointer;
+      }
+  }
 }
 
 .contact-section {
