@@ -49,7 +49,7 @@
           <input type="text" v-model="form.name" placeholder="your name">
           <input type="text" v-model="form.email" placeholder="your email">
           <input type="text" v-model="form.message" placeholder="your message">
-          <button v-on:click.prevent="postMessage()" class="submit-button">{{ contact.button }}</button>
+          <button v-on:click.prevent="postMessage()">{{ contact.button }}</button>
         </form>
       </div>
     </section>
@@ -390,6 +390,15 @@ export default {
       margin: 10px 0 10px 0;
       width: 30vw;
     }
+
+    button {
+      @include action-button;
+      margin: 40px 0 50px 0;
+
+        &:hover {
+          cursor: pointer;
+        }
+    }
   }
 }
 
@@ -399,15 +408,6 @@ export default {
     @include header-text;
     color: map-get($font-basic-colors, "light");
   }
-}
-
-.submit-button {
-  @include action-button;
-  margin: 40px 0 50px 0;
-
-    &:hover {
-      cursor: pointer;
-    }
 }
 
 .footer-section {
