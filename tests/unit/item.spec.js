@@ -18,6 +18,7 @@ wrapper.setData(
     },
     images: Array,
     products: Array,
+    productsLength: Number,
     error: {
       message: String
     }
@@ -48,6 +49,9 @@ describe('Item', () => {
   })
   it('should contain details of link', () => {
     expect(wrapper.vm.details.link).toBe(String)
+  })
+  it('should contain number of products', () => {
+    expect(wrapper.vm.productsLength).toBe(Number)
   })
   it('should contain products array', () => {
     expect(wrapper.vm.products).toBe(Array)
