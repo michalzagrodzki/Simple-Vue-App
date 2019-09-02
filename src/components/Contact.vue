@@ -10,9 +10,9 @@
         <h2>{{ caption.subtitle }}</h2>
         <h4>{{ caption.text }}</h4>
         <form>
-          <input type="text" v-model="form.name" placeholder="your name">
-          <input type="text" v-model="form.email" placeholder="your email">
-          <input type="text" v-model="form.message" placeholder="your message">
+          <input type="text" v-model="form.name" placeholder="your name" />
+          <input type="text" v-model="form.email" placeholder="your email" />
+          <input type="text" v-model="form.message" placeholder="your message" />
           <button v-on:click.prevent="postMessage()" class="submit-button">{{ submitText }}</button>
         </form>
       </div>
