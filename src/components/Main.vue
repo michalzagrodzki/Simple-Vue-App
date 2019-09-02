@@ -28,7 +28,7 @@
       </div>
       <div class="products-row">
         <div v-for="product in products" v-bind:key="product.id" class="product-item" v-on:click="linkToProduct(product.id)">
-          <img :src="product.coverImage" />
+          <img :src="product.coverImage" alt=""/>
           <div class="overlay">
             <p>{{ product.name }}</p>
           </div>
