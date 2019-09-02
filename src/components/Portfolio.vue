@@ -10,7 +10,7 @@
       <div class="portfolio-grid-section">
         <div class="portfolio-grid-header"></div>
         <div v-for="product in products" v-bind:key="product.id" v-on:click="linkToProduct(product.id)" class="portfolio-product-item">
-          <img :src="product.coverImage" />
+          <img :src="product.coverImage" alt=""/>
           <p>{{ product.name }}</p>
         </div>
       </div>

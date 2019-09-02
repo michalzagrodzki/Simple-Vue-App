@@ -4,7 +4,7 @@
       <div class="item-container">
         <div class="item-images-column">
           <div v-for="(image, index) in images" v-bind:key="index" class="item-image-item">
-            <img :src="image.link" />
+            <img :src="image.link" alt=""/>
             <p>{{ image.description }}</p>
           </div>
         </div>
