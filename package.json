@@ -1,10 +1,18 @@
 {
   "name": "simple-vue-app",
-  "version": "0.1.0",
+  "description": "App showing how does vue works. Simple example with fetching data from local file.",
+  "version": "1.0.0",
   "private": true,
   "engines": {
     "node": ">=10.16.1 <11.0.0"
   },
+  "author": "Michal Zagrodzki",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michalzagrodzki/Simple-Vue-App.git"
+  },
+  "homepage": "https://vue-simple-app.netlify.com/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
